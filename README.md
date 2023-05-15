@@ -15,7 +15,7 @@ cd raffle
 git checkout v0.1.0
 vi init.sh
 
-> On line 49, update your celestia light node's gateway url to base_url.
+> On line 49, update base_url to your celestia light node's gateway url.
 ```
 
 ### 3. Run init script
