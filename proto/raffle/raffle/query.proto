@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package raffle.raffle;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "raffle/raffle/params.proto";
+import "raffle/raffle/raffle.proto";
+
+option go_package = "raffle/x/raffle/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  
+  // Parameters queries the parameters of the module.
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/raffle/raffle/params";
+  
+  }
+  
+  // Queries a list of Raffle items.
+  rpc Raffle (QueryRaffleRequest) returns (QueryRaffleResponse) {
+    option (google.api.http).get = "/raffle/raffle/raffle";
+  
+  }
+  
+  // Queries a list of Raffles items.
+  rpc Raffles (QueryRafflesRequest) returns (QueryRafflesResponse) {
+    option (google.api.http).get = "/raffle/raffle/raffles";
+  
+  }
+
+  // Queries a list of RaffleResult items.
+  rpc RaffleResult (QueryRaffleResultRequest) returns (QueryRaffleResultResponse) {
+    option (google.api.http).get = "/raffle/raffle/raffle_result";
+  
+  }
+
+}
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryRaffleRequest {
+  uint64 id = 1;
+}
+
+message QueryRaffleResponse {
+  Raffle raffle = 1;
+}
+
+message QueryRafflesRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryRafflesResponse {
+  repeated Raffle                        raffles    = 1;
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryRaffleResultRequest {
+  uint64 id = 1;
+}
+
+message QueryRaffleResultResponse {
+  string raffleResult = 1;
+}
+

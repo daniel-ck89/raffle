@@ -1,0 +1,26 @@
+vue/node_modules
+vue/dist
+release/
+
+# OS
+.DS_Store
+*.swp
+*.swo
+*.swl
+*.swm
+*.swn
+.vscode
+.idea
+
+# Build
+artifacts
+vendor
+build
+tools/bin/*
+examples/build/*
+docs/_build
+docs/node_modules
+docs/tutorial
+dist
+tools-stamp
+docs/node_modules

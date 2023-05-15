@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package raffle.raffle;
+
+option go_package = "raffle/x/raffle/types";
+
+// Msg defines the Msg service.
+service Msg {
+  rpc CreateSimpleRaffle (MsgCreateSimpleRaffle) returns (MsgCreateSimpleRaffleResponse);
+  rpc StartSimpleRaffle  (MsgStartSimpleRaffle ) returns (MsgStartSimpleRaffleResponse );
+}
+message MsgCreateSimpleRaffle {
+  string creator              = 1;
+  string title                = 2;
+  string description          = 3;
+  string participantListUrl   = 4;
+  uint32 numberOfWinners      = 5;
+  uint32 numberOfParticipants = 6;
+}
+
+message MsgCreateSimpleRaffleResponse {
+  uint64 id = 1;
+}
+
+message MsgStartSimpleRaffle {
+  string creator = 1;
+  uint64 id      = 2;
+}
+
+message MsgStartSimpleRaffleResponse {}
+

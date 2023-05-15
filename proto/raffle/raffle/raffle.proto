@@ -1,0 +1,16 @@
+syntax = "proto3";
+package raffle.raffle;
+
+option go_package = "raffle/x/raffle/types";
+
+message Raffle {
+  
+  string creator = 1; 
+  uint64 id = 2; 
+  uint32 status = 3; 
+  string title = 4; 
+  string description = 5; 
+  string participantListUrl = 6; 
+  uint32 numberOfWinners = 7; 
+  uint32 numberOfParticipants = 8; 
+}

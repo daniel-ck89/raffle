@@ -1,0 +1,12 @@
+syntax = "proto3";
+package raffle.raffle;
+
+import "gogoproto/gogo.proto";
+import "raffle/raffle/params.proto";
+
+option go_package = "raffle/x/raffle/types";
+
+// GenesisState defines the raffle module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}

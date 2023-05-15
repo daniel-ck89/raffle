@@ -1,0 +1,10 @@
+syntax = "proto3";
+package raffle.raffle;
+
+option go_package = "raffle/x/raffle/types";
+
+message RaffleResult {
+  
+  uint64 id = 1; 
+  repeated int32 result = 2;
+}

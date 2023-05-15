@@ -1,0 +1,12 @@
+syntax = "proto3";
+package raffle.raffle;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "raffle/x/raffle/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}
