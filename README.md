@@ -11,8 +11,8 @@
 ### 2. clone raffle & configure init sciprt
 ```
 git clone https://github.com/daniel-ck89/raffle.git
-git checkout v0.1.0
 cd raffle
+git checkout v0.1.0
 vi init.sh
 
 > On line 49, update your celestia light node's gateway url to base_url.
