@@ -1,6 +1,6 @@
 # Raffle
 
-**Raffle** is a rollup chain for Celestia. Anyone can create a Raffle and proceed fairly on the blockchain. All results can be query easily by anyone.
+**Raffle** is a rollup chain for Celestia. Anyone can create a Raffle and proceed fairly on the blockchain. Anyone can query the results easily.
 
 ## Setup
 ### 1. Install Ignite
@@ -38,7 +38,7 @@ vi init.sh
 ```raffled tx raffle create-simple-raffle [title] [description] [participant-list-url] [number-of-winners] [number-of-participants] [flags]```
 - title : Raffle's title. ( max 256 characters )
 - description : Raffle's description. ( max 1024 characters )
-- participant-list-url : The url of the site containing the list of participants. Give each participant a unique id in sequential order, starting at 0. `ex) https://docs.google.com/spreadsheets/d/1jEnEBlYIf_GfQs32WfaCJJNtrylpfQdL_2NVtegtPGM/edit#gid=0`
+- participant-list-url : The url of the site contains the list of participants. Give each participant a unique id in sequential order, starting from 0. `ex) https://docs.google.com/spreadsheets/d/1jEnEBlYIf_GfQs32WfaCJJNtrylpfQdL_2NVtegtPGM/edit#gid=0`
 - number-of-winners : This is the number of winners. ( max winners 10,000 )
 - number-of-participants : The number of participants participating in the raffle. ( max participants 30,000 )
 
