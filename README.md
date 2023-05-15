@@ -54,7 +54,7 @@ vi init.sh
 #### Usage :
 ```raffled q raffle raffle [raffle_id] [flags]```
 
-If the raffle_id is not returned due to boradcast timeout in the previous step, you can find your raffle by querying raffles.
+If the raffle_id is not returned due to broadcast timeout in the previous step, you can find your raffle by querying raffles.
 
 ```raffled q raffle raffles --reverse --output=json --node http://localhost:27657```
 
