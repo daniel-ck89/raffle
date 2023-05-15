@@ -11,6 +11,7 @@
 ### 2. clone raffle & configure init sciprt
 ```
 git clone https://github.com/daniel-ck89/raffle.git
+git checkout v0.1.0
 cd raffle
 vi init.sh
 
