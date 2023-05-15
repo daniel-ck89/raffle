@@ -32,7 +32,7 @@ vi init.sh
 
 ## Usage
 ### 1. Create a raffle
-```raffled tx raffle create-simple-raffle "Event1" "This is a custom keyboard limited edition raffle." "https://docs.google.com/spreadsheets/d/1jEnEBlYIf_GfQs32WfaCJJNtrylpfQdL_2NVtegtPGM/edit?usp=sharing" 10 25 --from raffle-key-1 --broadcast-mode block --keyring-backend test```
+```raffled tx raffle create-simple-raffle "Event1" "This is a custom keyboard limited edition raffle." "https://docs.google.com/spreadsheets/d/1jEnEBlYIf_GfQs32WfaCJJNtrylpfQdL_2NVtegtPGM/edit?usp=sharing" 10 25 --from raffle-key-1 --broadcast-mode block --keyring-backend test --node http://localhost:27657```
 - If raffle creation is successful, Id (raffle_id) will be returned.
 #### Usage :
 ```raffled tx raffle create-simple-raffle [title] [description] [participant-list-url] [number-of-winners] [number-of-participants] [flags]```
@@ -45,7 +45,7 @@ vi init.sh
 
 &nbsp;&nbsp;&nbsp;
 ### 2. Query your raffle when after your tx is processed successfully
-```raffled q raffle raffle 0 --output json```
+```raffled q raffle raffle 0 --output json --node http://localhost:27657```
 
 - Response
   - ```{"raffle":{"creator":"raffle187p7dxsk3s4fujhx2q7a8ftd35fj2jmx97kfu0","id":"0","status":0,"title":"Event1","description":"This is a custom keyboard limited edition raffle.","participantListUrl":"https://docs.google.com/spreadsheets/d/1jEnEBlYIf_GfQs32WfaCJJNtrylpfQdL_2NVtegtPGM/edit?usp=sharing","numberOfWinners":10,"numberOfParticipants":25}}```
@@ -56,12 +56,12 @@ vi init.sh
 
 If the raffle_id is not returned due to boradcast timeout in the previous step, you can find your raffle by querying raffles.
 
-```raffled q raffle raffles --reverse --output=json```
+```raffled q raffle raffles --reverse --output=json --node http://localhost:27657```
 
 
 &nbsp;&nbsp;&nbsp;
 ### 3. Start raffle
-```raffled tx raffle start-simple-raffle 0 --from raffle-key-1 --keyring-backend test```
+```raffled tx raffle start-simple-raffle 0 --from raffle-key-1 --keyring-backend test --node http://localhost:27657```
 - Proceed to raffle. 
 #### Usage :
 ```raffled tx raffle start-simple-raffle [raffle_id] [flags]```
@@ -69,7 +69,7 @@ If the raffle_id is not returned due to boradcast timeout in the previous step, 
 
 &nbsp;&nbsp;&nbsp;
 ### 4. Query the raffle result
-```raffled q raffle raffle-result 0 --output json```
+```raffled q raffle raffle-result 0 --output json --node http://localhost:27657```
 
 - Response
   - ```{"raffleResult":"{"result":[1,5,7,8,9,10,15,16,17,21]}"}```
